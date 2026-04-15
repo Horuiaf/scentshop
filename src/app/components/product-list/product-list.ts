@@ -25,12 +25,12 @@ export class ProductList implements OnInit {
     });
   }
 
-  addToCart(product: any) {
-    this.cartService.addToCart({
-      title: product.title,
-      price: product.price
-    }).subscribe(() => {
-      console.log('Saved to database!');
-    });
-  }
+ addToCart(product: any) {
+  this.cartService.addToCart({
+    title: product.title,
+    price: product.price
+  }).subscribe(() => {
+    console.log('Saved!');
+  });
+}
 }
