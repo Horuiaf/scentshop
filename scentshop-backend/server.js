@@ -32,3 +32,8 @@ app.get('/cart', async (req, res) => {
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });
+
+app.delete('/cart/:id', async (req, res) => {
+  await Cart.findByIdAndDelete(req.params.id);
+  res.send("Deleted");
+});

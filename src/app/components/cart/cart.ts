@@ -25,7 +25,10 @@ export class Cart implements OnInit {
   getTotal() {
     return this.items.reduce((sum, item) => sum + item.price, 0);
   }
-  remove(id: string) {
-  console.log("Remove item:", id);
+remove(id: string) {
+  this.cartService.removeFromCart(id).subscribe(() => {
+    
+    this.items = this.items.filter(item => item._id !== id);
+  });
 }
 }

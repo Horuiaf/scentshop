@@ -17,4 +17,7 @@ export class CartService {
   getCart() {
     return this.http.get(this.url);
   }
+  removeFromCart(id: string) {
+  return this.http.delete(`${this.url}/${id}`);
+}
 }
